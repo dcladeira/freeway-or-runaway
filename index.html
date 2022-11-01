@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Another Freeway</title>
+</head>
+<body>
+    <article id="startScreen">
+        <h1>Another Freeway</h1>
+        <form>
+            <label>Qual é o seu nome?</label>
+            <input id="inputName" type="text" placeholder="Digite seu nome">
+            <button id="startBtn">Jogar!</button>
+        </form>
+    </article>
+
+    <article id="gameScreen" class="hide">
+        <section id="gameScore">
+            <p><span id="playerName">nome do jogador</span>, você tem <span id="playerScore"></span> pontos!</p>
+        </section>
+
+        <section>
+            <table>
+                <tbody class = "freewayMatrix">
+                </tbody>
+            </table>
+        </section>
+    </article>
+
+    <script src="./js/logic.js"></script>
+    <script src="./js/dom.js"></script>
+</body>
+</html>

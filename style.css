@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.hide {
+    display: none;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+tbody {
+    display: flex;
+    flex-direction: column;
+}
+
+.freewayMatrix {
+    display: flex;
+    height: 360px;
+    width: 600px;
+}
+
+.freewayMatrix td {
+    height: 30px;
+    width: 30px;
+    background-color: gray;
+}
+
+#player {
+    background-color: black;
+}
