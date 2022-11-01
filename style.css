@@ -25,6 +25,7 @@ tbody {
     display: flex;
     height: 360px;
     width: 600px;
+    /* background-color: gray; */
 }
 
 .freewayMatrix td {

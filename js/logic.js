@@ -4,7 +4,7 @@ class FreewayGame {
         this.points = 0;
         this.time = 60;
         this.freeway = [];
-        // this.startPoint =  
+        this.position = {line: 11, column: 9};
     }
 
     renderMatrix() {
@@ -20,9 +20,44 @@ class FreewayGame {
              }
              freewayMatrix.appendChild(this.freeway[i]);
         }
-        this.freeway[11][9].id = "player";
+        this.freeway[this.position.line][this.position.column].id = "player";
+        console.log('Posição inicial: ', this.position);
     }
 
-    
+    moveUp() {
+        this.freeway[this.position.line][this.position.column].removeAttribute('id');
+        this.position.line -= 1;
+        if (this.position.line == 0) {
+            console.log("Você ganhou 1 ponto!");
+            this.position.line = 11;
+            this.points += 1;
+        }
+        this.freeway[this.position.line][this.position.column].id = "player";
+    }
+
+    moveDown() {
+        this.freeway[this.position.line][this.position.column].removeAttribute('id');
+        if (this.position.line < 11) {
+            this.position.line += 1;
+        }
+        this.freeway[this.position.line][this.position.column].id = "player";
+    }
+
+    moveLeft() {
+        this.freeway[this.position.line][this.position.column].removeAttribute('id');
+        if (this.position.column > 0) {
+            this.position.column -= 1;
+        }
+        this.freeway[this.position.line][this.position.column].id = "player";
+    }
+
+    moveRight() {
+        this.freeway[this.position.line][this.position.column].removeAttribute('id');
+        if (this.position.column < 19) {
+            this.position.column += 1;
+        }
+        this.freeway[this.position.line][this.position.column].id = "player";
+    }
+
 }
 

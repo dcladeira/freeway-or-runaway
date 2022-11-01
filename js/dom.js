@@ -7,15 +7,14 @@ const gameScreen = document.getElementById('gameScreen');
 const playerName = document.getElementById('playerName');
 const playerScore = document.getElementById('playerScore');
 
-
+// Cria um novo jogo
+const match = new FreewayGame();
 
 // Adiciona event listener para início do jogo (clique no botão iniciar)
 startBtn.addEventListener('click', (event) => {
-    console.log("Começou!");
     event.preventDefault();
     
-    // Cria um novo jogo
-    const match = new FreewayGame();
+    // Iniciar tela de jogo
     match.renderMatrix();
     match.userName = inputName.value;
     playerName.innerText = match.userName;
@@ -24,10 +23,26 @@ startBtn.addEventListener('click', (event) => {
     startScreen.style.display = "none";
     gameScreen.style.display = "flex";
     
-    // settingUpGame();
+    settingUpGame();
 
 });
 
 function settingUpGame() {
-    // window.addEventListener('keydow')
+    document.addEventListener('keydown', function(e) {
+        switch (e.keyCode) {
+            case 37:
+                match.moveLeft()
+                break;
+            case 38:
+                match.moveUp()
+                break;
+            case 39:
+                match.moveRight()
+                break;
+            case 40:
+                match.moveDown();
+                break;
+        }
+        playerScore.innerText = match.points;
+    });
 }
