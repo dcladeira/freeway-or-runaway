@@ -37,3 +37,23 @@ tbody {
 #player {
     background-color: black;
 }
+
+#carOne, #carTen {
+    background-color: blue;
+}
+
+#carTwo, #carNine {
+    background-color: green;
+}
+
+#carThree, #carEight {
+    background-color: yellow;
+}
+
+#carFour, #carSeven {
+    background-color: white;
+}
+
+#carFive, #carSix {
+    background-color: red;
+}
