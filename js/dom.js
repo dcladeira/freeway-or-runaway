@@ -7,6 +7,7 @@ const gameScreen = document.getElementById('gameScreen');
 const playerName = document.getElementById('playerName');
 const playerScore = document.getElementById('playerScore');
 const playerLives = document.getElementById('playerLives');
+const playerLevel = document.getElementById('playerLevel');
 
 // Cria um novo jogo
 const match = new FreewayGame();
@@ -21,6 +22,7 @@ startBtn.addEventListener('click', (event) => {
     playerName.innerText = match.userName;
     playerScore.innerText = match.points;
     playerLives.innerText = match.lives;
+    playerLevel.innerText = match.level;
     
     console.log(`Bem-vindo ${inputName.value}, você tem ${match.points} pontos`);
     startScreen.style.display = "none";
@@ -31,8 +33,8 @@ startBtn.addEventListener('click', (event) => {
 });
 
 function settingUpGame() {
-
     document.addEventListener('keydown', function(e) {
+        let currentLevel = match.level;
         match.move(match.playerPosition, e.key);
         if ( (match.playerPosition.line == match.carOne.line && match.playerPosition.column == match.carOne.column) ||
              (match.playerPosition.line == match.carTwo.line && match.playerPosition.column == match.carTwo.column) ||
@@ -44,93 +46,99 @@ function settingUpGame() {
              (match.playerPosition.line == match.carEight.line && match.playerPosition.column == match.carEight.column) ||
              (match.playerPosition.line == match.carNine.line && match.playerPosition.column == match.carNine.column) ||
              (match.playerPosition.line == match.carTen.line && match.playerPosition.column == match.carTen.column) ) {
-                colision();
+                treatColision();
         }
         playerScore.innerText = match.points;
         playerLives.innerText = match.lives;
+        playerLevel.innerText = match.level;
+        if (currentLevel != match.level) {
+            setLevel();
+        }
     });
+    setLevel();
+}
 
+function treatColision() {
+    match.lives -= 1;
+    if (match.lives == 0) {
+        alert("Game Over!");
+        window.location.reload(true);
+    } else {
+        console.log("Foi atingido, perdeu uma vida.");
+        match.playerPosition = {line: 11, column: 9};
+        match.identifyElements();
+    }
+}
+
+function setLevel() {
     const intervalCarOne = setInterval(()=>{
         match.move(match.carOne, 'Right');
         if (match.playerPosition.line == match.carOne.line && match.playerPosition.column == match.carOne.column) {
-            colision();
+            treatColision();
         }
-    }, 600)
+    }, 600 + 100 * match.level)
 
     const intervalCarTwo = setInterval(()=>{
         match.move(match.carTwo, 'Right');
         if (match.playerPosition.line == match.carTwo.line && match.playerPosition.column == match.carTwo.column) {
-            colision();
+            treatColision();
         }
-    }, 500)
+    }, 500 + 100 * match.level)
 
     const intervalCarThree = setInterval(()=>{
         match.move(match.carThree, 'Right');
         if (match.playerPosition.line == match.carThree.line && match.playerPosition.column == match.carThree.column) {
-            colision();
+            treatColision();
         }
-    }, 400)
+    }, 400 + 100 * match.level)
 
     const intervalCarFour = setInterval(()=>{
         match.move(match.carFour, 'Right');
         if (match.playerPosition.line == match.carFour.line && match.playerPosition.column == match.carFour.column) {
-            colision();
+            treatColision();
         }
-    }, 300)
+    }, 300 + 100 * match.level)
 
     const intervalCarFive = setInterval(()=>{
         match.move(match.carFive, 'Right');
         if (match.playerPosition.line == match.carFive.line && match.playerPosition.column == match.carFive.column) {
-            colision();
+            treatColision();
         }
-    }, 200)
+    }, 200 + 100 * match.level)
 
     const intervalCarSix = setInterval(()=>{
         match.move(match.carSix, 'Left');
         if (match.playerPosition.line == match.carSix.line && match.playerPosition.column == match.carSix.column) {
-            colision();
+            treatColision();
         }
-    }, 200)
+    }, 200 + 100 * match.level)
 
     const intervalCarSeven = setInterval(()=>{
         match.move(match.carSeven, 'Left');
         if (match.playerPosition.line == match.carSeven.line && match.playerPosition.column == match.carSeven.column) {
-            colision();
+            treatColision();
         }
-    }, 300)
+    }, 300 + 100 * match.level)
 
     const intervalCarEight = setInterval(()=>{
         match.move(match.carEight, 'Left');
         if (match.playerPosition.line == match.carEight.line && match.playerPosition.column == match.carEight.column) {
-            colision();
+            treatColision();
         }
-    }, 400)
+    }, 400 + 100 * match.level)
 
     const intervalCarNine = setInterval(()=>{
         match.move(match.carNine, 'Left');
         if (match.playerPosition.line == match.carNine.line && match.playerPosition.column == match.carNine.column) {
-            colision();
+            treatColision();
         }
-    }, 500)
+    }, 500 + 100 * match.level)
 
     const intervalCarTen = setInterval(()=>{
         match.move(match.carTen, 'Left');
         if (match.playerPosition.line == match.carTen.line && match.playerPosition.column == match.carTen.column) {
-            colision();
+            treatColision();
         }
-    }, 600)
-
-    function colision() {
-        match.lives -= 1;
-        if (match.lives == 0) {
-            alert("Game Over!");
-            window.location.reload(true);
-        } else {
-            console.log("Foi atropelado, perdeu uma vida.");
-            match.playerPosition = {line: 11, column: 9};
-            console.log(match.playerPosition);
-            match.identifyElements();
-        }
-    }
-
+    }, 600 + 100 * match.level)
 }
+

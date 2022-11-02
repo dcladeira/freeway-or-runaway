@@ -3,6 +3,7 @@ class FreewayGame {
         this.userName = "";
         this.points = 0;
         this.lives = 4;
+        this.level = 1;
         this.userFace = [
             "./img/mininu4.png",
             "./img/mininu3.png",
@@ -40,7 +41,7 @@ class FreewayGame {
 
     identifyElements() {
         this.freeway[this.playerPosition.line][this.playerPosition.column].id = "player";
-        // this.freeway[this.playerPosition.line][this.playerPosition.column].style.background-image: url(./img/mininu1.png)
+        // this.freeway[this.playerPosition.line][this.playerPosition.column].style.backgroundImage = "url('./img/mininu2.png')"
         this.freeway[this.carOne.line][this.carOne.column].id = "carOne";
         this.freeway[this.carTwo.line][this.carTwo.column].id = "carTwo";
         this.freeway[this.carThree.line][this.carThree.column].id = "carThree";
@@ -68,6 +69,9 @@ class FreewayGame {
                     console.log("Você ganhou 1 ponto!");
                     object.line = 11;
                     this.points += 1;
+                    if (this.points % 5 == 0) {
+                        this.level += 1;
+                    }
                 }
                 break;
             case 'ArrowRight':
