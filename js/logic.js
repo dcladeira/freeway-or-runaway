@@ -23,6 +23,13 @@ class FreewayGame {
         
         for (let i=0; i<12; i++) {
              this.freeway[i] = document.createElement('tr');
+             if (i==0) {
+                this.freeway[i].setAttribute('class', 'end');
+             } else if (i==11) {
+                this.freeway[i].setAttribute('class', 'start');
+             } else {
+                this.freeway[i].setAttribute('class', 'battleField');
+             }
              for (let j=0; j<20; j++) {
                 this.freeway[i][j] = document.createElement('td');
                 // this.freeway[i][j].style.margin = 0;
@@ -45,7 +52,6 @@ class FreewayGame {
         this.freeway[this.carEight.line][this.carEight.column].id = "carEight";
         this.freeway[this.carNine.line][this.carNine.column].id = "carNine";
         this.freeway[this.carTen.line][this.carTen.column].id = "carTen";
-
     }
 
     move(object, direction) {

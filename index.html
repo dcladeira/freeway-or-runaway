@@ -10,17 +10,20 @@
 <body>
     <article id="startScreen">
         <h1>Freeway or Runaway???</h1>
-        <h3>Bora correr!</h3>
+        <h3>Deu ruim, corre!</h3>
         <form>
-            <label>Qual é o seu nome?</label>
+            <!-- <label>Qual é o seu nome?</label> -->
             <input id="inputName" type="text" placeholder="Digite seu nome">
             <button id="startBtn">Jogar!</button>
         </form>
     </article>
 
     <article id="gameScreen" class="hide">
-        <section id="gameScore">
-            <p>Player: <span id="playerName"></span> - Energia: <span id="playerLives"></span> - Pontos: <span id="playerScore"></span> - Nível: <span id="playerLevel"></span></p>
+        <section id="gameInfo">
+            <p>Jogador: <span id="playerName"></span></p>
+            <p>Energia: <span id="playerLives"></span></p>
+            <p>Pontos: <span id="playerScore"></span></p>
+            <p>Nível: <span id="playerLevel"></span></p>
         </section>
 
         <section>
