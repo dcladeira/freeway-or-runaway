@@ -34,8 +34,25 @@ tbody {
     background-color: lightgray;
 }
 
-#player {
-    background-color: black;
+#player1 {
+    background-image: url(./img/mininu4.png);
+    background-size: cover;
+    background-position: center;
+}
+
+#player2 {
+    background-image: url(./img/mininu3.png);
+    background-size: cover;
+    background-position: center;
+}
+
+#player3 {
+    background-image: url(./img/mininu2.png);
+    background-size: cover;
+    background-position: center;
+}
+
+#player4 {
     background-image: url(./img/mininu1.png);
     background-size: cover;
     background-position: center;
