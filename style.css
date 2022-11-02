@@ -25,6 +25,24 @@ article {
     width: 600px;
 }
 
+#welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    background-image: url(./img/boas_vindas.jpg);
+    width: 600px;
+    height: 420px;
+    padding: 10px 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: rgb(205, 10, 40);
+}
+
+#welcome h1, h4, form {
+    width: 300px;
+    text-align: center;
+    margin-top: 5px;
+}
 #gameInfo {
     display: flex;
     justify-content: space-evenly;
