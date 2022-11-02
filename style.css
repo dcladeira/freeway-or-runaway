@@ -31,29 +31,72 @@ tbody {
 .freewayMatrix td {
     height: 30px;
     width: 30px;
-    background-color: gray;
+    background-color: lightgray;
 }
 
 #player {
-    background-color: black;
+    /* background-color: black; */
+    background-image: url(./img/mininu1.png);
+    background-size: cover;
+    background-position: center;
 }
 
-#carOne, #carTen {
-    background-color: blue;
+#carOne {
+    background-image: url(./img/chinelo\ azul\ esquerda.png);
+    background-size: cover;
+    background-position: center;
 }
 
-#carTwo, #carNine {
-    background-color: green;
+#carTwo {
+    background-image: url(./img/chinelo\ verde\ esquerda.png);
+    background-size: cover;
+    background-position: center;
 }
 
-#carThree, #carEight {
-    background-color: yellow;
+#carThree {
+    background-image: url(./img/chinelo\ branco\ esquerda.png);
+    background-size: cover;
+    background-position: center;
 }
 
-#carFour, #carSeven {
-    background-color: white;
+#carFour {
+    background-image: url(./img/chinelo\ amarelo\ esquerda.png);
+    background-size: cover;
+    background-position: center;
 }
 
-#carFive, #carSix {
-    background-color: red;
+#carFive {
+    background-image: url(./img/chinelo\ vermelho\ esquerda.png);
+    background-size: cover;
+    background-position: center;
+}
+
+#carSix {
+    background-image: url(./img/chinelo\ vermelho\ direita.png);
+    background-size: cover;
+    background-position: center;
+}
+
+#carSeven {
+    background-image: url(./img/chinelo\ amarelo\ direita.png);
+    background-size: cover;
+    background-position: center;
+}
+
+#carEight {
+    background-image: url(./img/chinelo\ branco\ direita.png);
+    background-size: cover;
+    background-position: center;
+}
+
+#carNine {
+    background-image: url(./img/chinelo\ verde\ direita.png);
+    background-size: cover;
+    background-position: center;
+}
+
+#carTen {
+    background-image: url(./img/chinelo\ azul\ direita.png);
+    background-size: cover;
+    background-position: center;
 }

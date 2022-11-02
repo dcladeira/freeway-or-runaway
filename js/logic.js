@@ -2,8 +2,13 @@ class FreewayGame {
     constructor() {
         this.userName = "";
         this.points = 0;
-        this.lives = 3;
-        // this.time = 60;
+        this.lives = 4;
+        this.userFace = [
+            "./img/mininu4.png",
+            "./img/mininu3.png",
+            "./img/mininu2.png",
+            "./img/mininu1.png"
+        ];
         this.freeway = [];
         this.playerPosition = {line: 11, column: 9};
         this.carOne = {line: 1, column: 0};
@@ -35,6 +40,7 @@ class FreewayGame {
 
     identifyElements() {
         this.freeway[this.playerPosition.line][this.playerPosition.column].id = "player";
+        // this.freeway[this.playerPosition.line][this.playerPosition.column].style.background-image: url(./img/mininu1.png)
         this.freeway[this.carOne.line][this.carOne.column].id = "carOne";
         this.freeway[this.carTwo.line][this.carTwo.column].id = "carTwo";
         this.freeway[this.carThree.line][this.carThree.column].id = "carThree";

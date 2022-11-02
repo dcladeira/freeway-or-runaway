@@ -21,6 +21,7 @@ startBtn.addEventListener('click', (event) => {
     playerName.innerText = match.userName;
     playerScore.innerText = match.points;
     playerLives.innerText = match.lives;
+    
     console.log(`Bem-vindo ${inputName.value}, você tem ${match.points} pontos`);
     startScreen.style.display = "none";
     gameScreen.style.display = "flex";
