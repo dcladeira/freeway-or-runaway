@@ -98,6 +98,106 @@ class FreewayGame {
                 break;
         }
         this.freeway[object.line][object.column].id = objectId;
+        this.checkColision();
+    }
+
+    checkColision() {
+        if ( (this.playerPosition.line == this.carOne.line && this.playerPosition.column == this.carOne.column) ||
+        (this.playerPosition.line == this.carTwo.line && this.playerPosition.column == this.carTwo.column) ||
+        (this.playerPosition.line == this.carThree.line && this.playerPosition.column == this.carThree.column) ||
+        (this.playerPosition.line == this.carFour.line && this.playerPosition.column == this.carFour.column) ||
+        (this.playerPosition.line == this.carFive.line && this.playerPosition.column == this.carFive.column) ||
+        (this.playerPosition.line == this.carSix.line && this.playerPosition.column == this.carSix.column) ||
+        (this.playerPosition.line == this.carSeven.line && this.playerPosition.column == this.carSeven.column) ||
+        (this.playerPosition.line == this.carEight.line && this.playerPosition.column == this.carEight.column) ||
+        (this.playerPosition.line == this.carNine.line && this.playerPosition.column == this.carNine.column) ||
+        (this.playerPosition.line == this.carTen.line && this.playerPosition.column == this.carTen.column) ) {
+           this.treatColision();
+        }
+    }
+
+    treatColision() {
+        this.lives -= 1;
+        if (this.lives == 0) {
+            alert("Game Over!");
+            window.location.reload(true);
+        } else {
+            console.log("Foi atingido, sua energia diminuiu.");
+            this.playerPosition = {line: 11, column: 9};
+            this.identifyElements();
+        }
+    }
+    
+    setLevel(level) {
+        const intervalCarOne = setInterval(()=>{
+            this.move(this.carOne, 'Right');
+            if (this.playerPosition.line == this.carOne.line && this.playerPosition.column == this.carOne.column) {
+                this.treatColision();
+            }
+        }, 650 - 50 * level)
+    
+        const intervalCarTwo = setInterval(()=>{
+            this.move(this.carTwo, 'Right');
+            if (this.playerPosition.line == this.carTwo.line && this.playerPosition.column == this.carTwo.column) {
+                this.treatColision();
+            }
+        }, 550 - 50 * level)
+    
+        const intervalCarThree = setInterval(()=>{
+            this.move(this.carThree, 'Right');
+            if (this.playerPosition.line == this.carThree.line && this.playerPosition.column == this.carThree.column) {
+                this.treatColision();
+            }
+        }, 450 - 50 * level)
+    
+        const intervalCarFour = setInterval(()=>{
+            this.move(this.carFour, 'Right');
+            if (this.playerPosition.line == this.carFour.line && this.playerPosition.column == this.carFour.column) {
+                this.treatColision();
+            }
+        }, 350 - 50 * level)
+    
+        const intervalCarFive = setInterval(()=>{
+            this.move(this.carFive, 'Right');
+            if (this.playerPosition.line == this.carFive.line && this.playerPosition.column == this.carFive.column) {
+                this.treatColision();
+            }
+        }, 250 - 50 * level)
+    
+        const intervalCarSix = setInterval(()=>{
+            this.move(this.carSix, 'Left');
+            if (this.playerPosition.line == this.carSix.line && this.playerPosition.column == this.carSix.column) {
+                this.treatColision();
+            }
+        }, 250 - 50 * level)
+    
+        const intervalCarSeven = setInterval(()=>{
+            this.move(this.carSeven, 'Left');
+            if (this.playerPosition.line == this.carSeven.line && this.playerPosition.column == this.carSeven.column) {
+                this.treatColision();
+            }
+        }, 350 - 50 * level)
+    
+        const intervalCarEight = setInterval(()=>{
+            this.move(this.carEight, 'Left');
+            if (this.playerPosition.line == this.carEight.line && this.playerPosition.column == this.carEight.column) {
+                this.treatColision();
+            }
+        }, 450 - 50 * level)
+    
+        const intervalCarNine = setInterval(()=>{
+            this.move(this.carNine, 'Left');
+            if (this.playerPosition.line == this.carNine.line && this.playerPosition.column == this.carNine.column) {
+                this.treatColision();
+            }
+        }, 550 - 50 * level)
+    
+        const intervalCarTen = setInterval(()=>{
+            this.move(this.carTen, 'Left');
+            if (this.playerPosition.line == this.carTen.line && this.playerPosition.column == this.carTen.column) {
+                this.treatColision();
+            }
+        }, 650 - 50 * level)
     }
 }
 
